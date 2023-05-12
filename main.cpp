@@ -1,0 +1,347 @@
+#include <iostream>
+#include "Domain/List.h"
+#include "Domain/NodeArbore.h"
+#include "Domain/Arbore.h"
+#include "Domain/User.h"
+#include "Tests/Tests.h"
+#include "Repository/RepoUser.h"
+#include "Service/ServiceUser.h"
+#include "UI/UI.h"
+using namespace std;
+
+int main() {
+   // testAllList();
+    cout<<"tests passed"<<endl;
+
+//    ServiceUser su;
+//    ServiceMesaj sm;
+//    ServiceFriendship sf;
+//    ServiceEveniment se;
+//    UI ui(su,sm, sf, se);
+//    ui.runMenu();
+    List<User>users;
+    User u1(1, "Oana", "Cluj", 19);
+    User u2(2, "Robert", "Bacau", 20);
+    User u3(3, "Cosmina", "Ciuc", 20);
+    User u4(4, "Andrei", "Cluj", 21);
+    User u5(5, "Mihai", "Alba", 23);
+    User u6(6, "Alexandra", "Cluj", 32);
+    User u7(7, "Alex", "Bucuresti", 34);
+    User u8(8, "Ioana", "Cluj", 14);
+    User u9(9, "Bogdan", "Oradea", 29);
+    User u10(10, "Cristian", "Iasi", 23);
+    User u11(11, "Vlad", "Cluj", 25);
+    User u12(12, "Andreea", "Alba", 31);
+    User u13(13, "Matei", "Vrancea", 40);
+    User u14(14, "Miruna", "Sibiu", 18);
+    User u15(15, "Liviu", "Timisoara", 39);
+    users.pushBack(u1);
+    users.pushBack(u2);
+    users.pushBack(u3);
+    users.pushBack(u4);
+    users.pushBack(u5);
+    users.pushBack(u6);
+    users.pushBack(u7);
+    users.pushBack(u8);
+    users.pushBack(u9);
+    users.pushBack(u10);
+    users.pushBack(u11);
+    users.pushBack(u12);
+    users.pushBack(u13);
+    users.pushBack(u14);
+    users.pushBack(u15);
+
+    vector<Friendship>friendship;
+    Friendship f1(1,1,2);
+    Friendship f2(2,1,3);
+    Friendship f3(3,2,3);
+    Friendship f4(4,2,10);
+    Friendship f5(5,3,11);
+    Friendship f6(6,4,8);
+    Friendship f7(7,9,4);
+    Friendship f8(8,5,11);
+    Friendship f9(9,14,5);
+    Friendship f10(10,6,12);
+    Friendship f11(11,6,7);
+    Friendship f12(12,7,8);
+    Friendship f13(13,11,8);
+    Friendship f14(14,9,10);
+    Friendship f15(15,11,15);
+    Friendship f16(16,13,2);
+    Friendship f17(17,14,7);
+    Friendship f18(18,15,10);
+    Friendship f19(19,1,8);
+    Friendship f20(20,14,13);
+    Friendship f21(21,7,4);
+    Friendship f22(22,10,11);
+    Friendship f23(23,12,5);
+    Friendship f24(24,13,2);
+    Friendship f25(25,4,15);
+    Friendship f26(26,1,9);
+    Friendship f27(27,3,11);
+    Friendship f28(28,5,2);
+    Friendship f29(29,4,13);
+    Friendship f30(30,14,15);
+    friendship.push_back(f1);
+    friendship.push_back(f2);
+    friendship.push_back(f3);
+    friendship.push_back(f4);
+    friendship.push_back(f5);
+    friendship.push_back(f6);
+    friendship.push_back(f7);
+    friendship.push_back(f8);
+    friendship.push_back(f9);
+    friendship.push_back(f10);
+    friendship.push_back(f11);
+    friendship.push_back(f12);
+    friendship.push_back(f13);
+    friendship.push_back(f14);
+    friendship.push_back(f15);
+    friendship.push_back(f16);
+    friendship.push_back(f17);
+    friendship.push_back(f18);
+    friendship.push_back(f19);
+    friendship.push_back(f20);
+    friendship.push_back(f21);
+    friendship.push_back(f22);
+    friendship.push_back(f23);
+    friendship.push_back(f24);
+    friendship.push_back(f25);
+    friendship.push_back(f26);
+    friendship.push_back(f27);
+    friendship.push_back(f28);
+    friendship.push_back(f29);
+    friendship.push_back(f30);
+
+    vector<Mesaj>mesaj;
+    Mesaj m1(1,1,2, "hey");
+    Mesaj m2(2,2,11, "hey");
+    Mesaj m3(3,1,3, "hey");
+    Mesaj m4(4,1,4, "hey");
+    Mesaj m5(5,1,12, "hey");
+    Mesaj m6(6,4,9, "hey");
+    Mesaj m7(7,10,15, "hey");
+    Mesaj m8(8,4,8, "hey");
+    Mesaj m9(9,11,12,"salut");
+    Mesaj m10(10,11,2,"salut");
+    Mesaj m11(11,3,1,"salut");
+    Mesaj m12(12,4,1,"salut");
+    Mesaj m13(13,12,1,"salut");
+    Mesaj m14(14,9,4,"salut");
+    Mesaj m15(15,15,10,"salut");
+    Mesaj m16(16,8,4,"salut");
+    Mesaj m17(17,13,5,"salut");
+    Mesaj m18(18,5,2,"ce faci?");
+    Mesaj m19(19,5,13,"ce faci?");
+    Mesaj m20(20,14,2,"ce faci?");
+    Mesaj m21(21,11,12,"ce faci?");
+    Mesaj m22(22,1,2,"ce faci?");
+    Mesaj m23(23,1,7,"ce faci?");
+    Mesaj m24(24,8,9,"ce faci?");
+    Mesaj m25(25,5,6,"ce faci?");
+    Mesaj m26(26,4,3,"ce faci?");
+    Mesaj m27(27,1,13,"ce faci?");
+    Mesaj m28(28, 2,3 ,"hai la cafea!");
+    Mesaj m29(29, 7,8 ,"hai in club!");
+    Mesaj m30(30, 10,4 ,"hai in club!");
+    Mesaj m31(31, 15,9 ,"hai in club!");
+    Mesaj m32(32, 2,13 ,"hai in club!");
+    Mesaj m33(33, 1,14 ,"hai in club!");
+    Mesaj m34(34, 10,8 ,"hai la cafea!");
+    Mesaj m35(35, 6,7 ,"hai la cafea!");
+    Mesaj m36(36, 4,1 ,"hai la cafea!");
+    mesaj.push_back(m1);
+    mesaj.push_back(m2);
+    mesaj.push_back(m3);
+    mesaj.push_back(m4);
+    mesaj.push_back(m5);
+    mesaj.push_back(m6);
+    mesaj.push_back(m7);
+    mesaj.push_back(m8);
+    mesaj.push_back(m9);
+    mesaj.push_back(m10);
+    mesaj.push_back(m11);
+    mesaj.push_back(m12);
+    mesaj.push_back(m13);
+    mesaj.push_back(m14);
+    mesaj.push_back(m5);
+    mesaj.push_back(m16);
+    mesaj.push_back(m17);
+    mesaj.push_back(m18);
+    mesaj.push_back(m19);
+    mesaj.push_back(m20);
+    mesaj.push_back(m21);
+    mesaj.push_back(m22);
+    mesaj.push_back(m23);
+    mesaj.push_back(m24);
+    mesaj.push_back(m25);
+    mesaj.push_back(m26);
+    mesaj.push_back(m27);
+    mesaj.push_back(m28);
+    mesaj.push_back(m29);
+    mesaj.push_back(m30);
+    mesaj.push_back(m31);
+    mesaj.push_back(m32);
+    mesaj.push_back(m33);
+    mesaj.push_back(m34);
+    mesaj.push_back(m35);
+    mesaj.push_back(m36);
+
+    vector<Eveniment>events;
+
+    Eveniment e1(1,"concert", "Piata Unirii", 10);
+    Eveniment e2(2,"concert", "centru", 11);
+    Eveniment e3(3,"festival", "Parcul Central", 3);
+    Eveniment e4(4,"party", "NOA", 21);
+    Eveniment e5(5,"party", "Plan B", 31);
+    Eveniment e6(6,"festival", "constanta", 2);
+    Eveniment e7(7,"concert", "Alba", 10);
+    Eveniment e8(8,"spectacol", "Teatrul National", 17);
+    Eveniment e9(9,"maraton", "Cluj", 25);
+    Eveniment e10(10,"festival", "Bucuresti", 3);
+    Eveniment e11(11,"party", "Euphoria", 5);
+    Eveniment e12(12,"spectacol", "Opera Maghiara", 19);
+    Eveniment e13(13,"concert", "Iulius Mall", 29);
+    Eveniment e14(14,"maraton", "centru", 28);
+    Eveniment e15(15,"concert", "Iasi", 16);
+    events.push_back(e1);
+    events.push_back(e2);
+    events.push_back(e3);
+    events.push_back(e4);
+    events.push_back(e5);
+    events.push_back(e6);
+    events.push_back(e7);
+    events.push_back(e8);
+    events.push_back(e9);
+    events.push_back(e10);
+    events.push_back(e11);
+    events.push_back(e12);
+    events.push_back(e13);
+    events.push_back(e14);
+    events.push_back(e15);
+
+
+//    testAllList();
+//    cout<<"tests passed"<<endl;
+//
+
+
+
+
+    RepoMesaj rm;
+    rm.addMesaj(m1);
+    rm.addMesaj(m2);
+    rm.addMesaj(m3);
+    rm.addMesaj(m4);
+    rm.addMesaj(m5);
+    rm.addMesaj(m6);
+    rm.addMesaj(m7);
+    rm.addMesaj(m8);
+    rm.addMesaj(m9);
+    rm.addMesaj(m10);
+    rm.addMesaj(m11);
+    rm.addMesaj(m12);
+    rm.addMesaj(m13);
+    rm.addMesaj(m14);
+    rm.addMesaj(m15);
+    rm.addMesaj(m16);
+    rm.addMesaj(m17);
+    rm.addMesaj(m18);
+    rm.addMesaj(m19);
+    rm.addMesaj(m20);
+    rm.addMesaj(m21);
+    rm.addMesaj(m22);
+    rm.addMesaj(m23);
+    rm.addMesaj(m24);
+    rm.addMesaj(m25);
+    rm.addMesaj(m26);
+    rm.addMesaj(m27);
+    rm.addMesaj(m28);
+    rm.addMesaj(m29);
+    rm.addMesaj(m30);
+    rm.addMesaj(m31);
+    rm.addMesaj(m32);
+    rm.addMesaj(m33);
+    rm.addMesaj(m34);
+    rm.addMesaj(m35);
+    rm.addMesaj(m36);
+    ServiceMesaj sm(rm);
+
+
+    RepoFriendship rf;
+    rf.addFriendship(f1);
+    rf.addFriendship(f2);
+    rf.addFriendship(f3);
+    rf.addFriendship(f4);
+    rf.addFriendship(f5);
+    rf.addFriendship(f6);
+    rf.addFriendship(f7);
+    rf.addFriendship(f8);
+    rf.addFriendship(f9);
+    rf.addFriendship(f10);
+    rf.addFriendship(f11);
+    rf.addFriendship(f12);
+    rf.addFriendship(f13);
+    rf.addFriendship(f14);
+    rf.addFriendship(f15);
+    rf.addFriendship(f16);
+    rf.addFriendship(f17);
+    rf.addFriendship(f18);
+    rf.addFriendship(f19);
+    rf.addFriendship(f20);
+    rf.addFriendship(f21);
+    rf.addFriendship(f22);
+    rf.addFriendship(f23);
+    rf.addFriendship(f24);
+    rf.addFriendship(f25);
+    rf.addFriendship(f26);
+    rf.addFriendship(f27);
+    rf.addFriendship(f28);
+    rf.addFriendship(f29);
+    rf.addFriendship(f30);
+    ServiceFriendship sf(rf);
+
+
+    RepoEveniment re;
+    re.addEvent(e1);
+    re.addEvent(e2);
+    re.addEvent(e3);
+    re.addEvent(e4);
+    re.addEvent(e5);
+    re.addEvent(e6);
+    re.addEvent(e7);
+    re.addEvent(e8);
+    re.addEvent(e9);
+    re.addEvent(e10);
+    re.addEvent(e11);
+    re.addEvent(e12);
+    re.addEvent(e13);
+    re.addEvent(e14);
+    re.addEvent(e15);
+
+    ServiceEveniment se(re);
+
+    RepoUser ru;
+    ru.addUser(u1);
+    ru.addUser(u2);
+    ru.addUser(u3);
+    ru.addUser(u4);
+    ru.addUser(u5);
+    ru.addUser(u6);
+    ru.addUser(u7);
+    ru.addUser(u8);
+    ru.addUser(u9);
+    ru.addUser(u10);
+    ru.addUser(u11);
+    ru.addUser(u12);
+    ru.addUser(u13);
+    ru.addUser(u14);
+    ru.addUser(u15);
+    ServiceUser su(ru);
+
+
+    UI ui(su,sm, sf, se);
+    ui.runMenu();
+
+    return 0;
+}

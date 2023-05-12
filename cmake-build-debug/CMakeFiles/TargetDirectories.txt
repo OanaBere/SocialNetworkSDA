@@ -1,0 +1,3 @@
+C:/Users/LENOVO 1111111/Desktop/OOP/PROIECT_SDA/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/LENOVO 1111111/Desktop/OOP/PROIECT_SDA/cmake-build-debug/CMakeFiles/PROIECT_SDA.dir
+C:/Users/LENOVO 1111111/Desktop/OOP/PROIECT_SDA/cmake-build-debug/CMakeFiles/rebuild_cache.dir
